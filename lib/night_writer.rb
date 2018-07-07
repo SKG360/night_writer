@@ -28,4 +28,33 @@ class NightWriter
     bottom_hash[bottom_two]
   end
 
+  def conversion
+    read_file.chars
+  end
+
+  def translate_top
+    translated_array = conversion.map do |letter|
+      hash_top(letter)
+    end
+    translated_array.join
+  end
+
+  def translate_mid
+    translated_array = conversion.map do |letter|
+      hash_mid(letter)
+    end
+    translated_array.join
+  end
+
+  def translate_bottom
+    translated_array = conversion.map do |letter|
+      hash_bottom(letter)
+    end
+    translated_array.join
+  end
+
+  def string_print
+    print translate_top + "\n" + translate_mid + "\n" + translate_bottom + "\n"
+  end
+
 end
