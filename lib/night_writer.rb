@@ -1,12 +1,12 @@
-class NightWriter
+require "pry"
 
+class NightWriter
+  attr_accessor :read_file
   def initialize
     @reader = File.open(ARGV[0], "r")
     @writer = File.open(ARGV[1], "w")
-  end
-
-  def read_file
-    @reader.read
+    @read_file = @reader.read
+    @reader.close
   end
 
   def write_file
@@ -54,7 +54,10 @@ class NightWriter
   end
 
   def string_print
-    print translate_top + "\n" + translate_mid + "\n" + translate_bottom + "\n"
+    puts "#{translate_top}\n#{translate_mid}\n#{translate_bottom}"
   end
 
 end
+
+nightwriter = NightWriter.new
+nightwriter.string_print
