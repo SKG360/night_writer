@@ -1,4 +1,5 @@
 require "pry"
+require "./lib/hashes.rb"
 
 class NightWriter
   attr_accessor :read_file
