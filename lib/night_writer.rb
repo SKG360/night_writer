@@ -3,6 +3,7 @@ require "./lib/hashes.rb"
 
 class NightWriter
   attr_accessor :read_file
+
   def initialize
     @reader = File.open(ARGV[0], "r")
     @writer = File.open(ARGV[1], "w")
@@ -59,6 +60,7 @@ class NightWriter
   end
 
 end
+
 
 nightwriter = NightWriter.new
 nightwriter.string_print
