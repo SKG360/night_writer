@@ -34,29 +34,31 @@ class NightWriter
     convert.chars
   end
 
-  def translate_top
-    translated_array = conversion.map do |letter|
+  def translate_top(top_input)
+    translated_array = conversion(top_input).map do |letter|
       hash_top(letter)
     end
     translated_array.join
   end
 
-  def translate_mid
-    translated_array = conversion.map do |letter|
+  def translate_mid(mid_input)
+    translated_array = conversion(mid_input).map do |letter|
       hash_mid(letter)
     end
     translated_array.join
   end
 
-  def translate_bottom
-    translated_array = conversion.map do |letter|
+  def translate_bottom(bottom_input)
+    translated_array = conversion(bottom_input).map do |letter|
       hash_bottom(letter)
     end
     translated_array.join
   end
 
-  def string_print
-    puts "#{translate_top}\n#{translate_mid}\n#{translate_bottom}"
+  def string_print(translate_input)
+    string_input = "#{translate_top(translate_input)}\n#{translate_mid(translate_input)}\n#{translate_bottom(translate_input)}\n"
+    p string_input
+    # string_input
   end
 
 end
