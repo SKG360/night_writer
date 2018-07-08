@@ -20,4 +20,17 @@ class NightWriterTest < Minitest::Test
     assert_instance_of File, nw.writer
   end
 
+  def test_for_all_three
+    nw = NightWriter.new
+    assert_equal "0.", nw.hash_top("a")
+    assert_equal "..", nw.hash_mid("a")
+    assert_equal "..", nw.hash_bottom("a")
+  end
+
+  def test_for_conversion
+    nw = NightWriter.new
+    assert_equal ["a","n","d"], nw.conversion("and")
+  end
+
+
 end

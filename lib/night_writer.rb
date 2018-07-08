@@ -1,14 +1,14 @@
-require "pry"
 require "./lib/hashes.rb"
 
 class NightWriter
-  attr_accessor :read_file, :reader, :writer
+  attr_accessor :read_file, :reader, :writer, :hash_for_top
 
   def initialize
     @reader = File.open(ARGV[0], "r")
     @writer = File.open(ARGV[1], "w")
     @read_file = @reader.read
     @reader.close
+
   end
 
   def write_file
@@ -16,22 +16,22 @@ class NightWriter
   end
 
   def hash_top(top_two)
-    top_hash = Hash.new
+    top_hash = Hashes.new
     top_hash.hash_for_top[top_two]
   end
 
   def hash_mid(mid_two)
-    mid_hash = Hash.new
+    mid_hash = Hashes.new
     mid_hash.hash_for_mid[mid_two]
   end
 
   def hash_bottom(bottom_two)
-    bottom_hash = Hash.new
+    bottom_hash = Hashes.new
     bottom_hash.hash_for_bottom[bottom_two]
   end
 
-  def conversion
-    read_file.chars
+  def conversion(convert)
+    convert.chars
   end
 
   def translate_top
