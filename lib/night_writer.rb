@@ -2,7 +2,7 @@ require "pry"
 require "./lib/hashes.rb"
 
 class NightWriter
-  attr_accessor :read_file
+  attr_accessor :read_file, :reader, :writer
 
   def initialize
     @reader = File.open(ARGV[0], "r")
@@ -12,22 +12,22 @@ class NightWriter
   end
 
   def write_file
-    @writer.write
+        @writer.write
   end
 
   def hash_top(top_two)
-    top_hash = {"h" => "0."}
-    top_hash[top_two]
+    top_hash = Hash.new
+    top_hash.hash_for_top[top_two]
   end
 
   def hash_mid(mid_two)
-    mid_hash = {"h" => "00"}
-    mid_hash[mid_two]
+    mid_hash = Hash.new
+    mid_hash.hash_for_mid[mid_two]
   end
 
   def hash_bottom(bottom_two)
-    bottom_hash = {"h" => ".."}
-    bottom_hash[bottom_two]
+    bottom_hash = Hash.new
+    bottom_hash.hash_for_bottom[bottom_two]
   end
 
   def conversion
@@ -60,7 +60,3 @@ class NightWriter
   end
 
 end
-
-
-nightwriter = NightWriter.new
-nightwriter.string_print
