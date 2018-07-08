@@ -284,7 +284,7 @@ class Hashes
   end
 end
 
-braille_to_alpha = {
+# braille_to_alpha = {
 #     'O.....'=> 'a', 'O.O...'=> 'b', 'OO....'=> 'c', 'OO.O..'=> 'd',
 #     'O..O..'=> 'e', 'OOO...'=> 'f', 'OOOO..'=> 'g', 'O.OO..'=> 'h',
 #     '.OO...'=> 'i', '.OOO..'=> 'j', 'O...O.'=> 'k', 'O.O.O.'=> 'l',
@@ -293,7 +293,7 @@ braille_to_alpha = {
 #     'O...OO'=> 'u', 'O.O.OO'=> 'v', '.OOO.O'=> 'w', 'OO..OO'=> 'x',
 #     'OO.OOO'=> 'y', 'O..OOO'=> 'z'
 # }
-alpha_to_braille = {
+# alpha_to_braille = {
 #     'a' => 'O.....', 'b' => 'O.O...', 'c' => 'OO....', 'd' => 'OO.O..',
 #     'e' => 'O..O..', 'f' => 'OOO...', 'g' => 'OOOO..', 'h' => 'O.OO..',
 #     'i' => '.OO...', 'j' => '.OOO..', 'k' => 'O...O.', 'l' => 'O.O.O.',
