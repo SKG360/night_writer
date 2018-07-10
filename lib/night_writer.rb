@@ -25,8 +25,9 @@ class NightWriter
     end
   end
 
-  def write_file
-        @writer.write
+  def write_file(string)
+    break_up(string)
+    puts "Created '#{ARGV[1]}' containing #{(@read_file.length - 1) * 6} characters"
   end
 
   def hash_top(top_two)
@@ -76,3 +77,8 @@ class NightWriter
   end
 
 end
+
+
+nw = NightWriter.new
+binding.pry
+nw.write_file(nw.read_file)

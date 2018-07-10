@@ -22,10 +22,14 @@ class NightWriterTest < Minitest::Test
 
   #how to test if the recursive method is functioning when arguments are variable
 
-  # def test_break_up
-  #   nw = NightWriter.new
-  #
-  # end
+  def test_break_up
+    nw = NightWriter.new
+    writer = File.open(ARGV[1], "r")
+    tester = File.open(ARGV[2], "w")
+    writer = writer.read
+    tester = tester.read
+    assert_equal writer, tester
+  end
 
   def test_for_all_three
     nw = NightWriter.new
