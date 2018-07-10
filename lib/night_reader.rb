@@ -63,11 +63,11 @@ class NightReader
     def write_it(string)
       @writer.write(write_worker(string).join)
       puts "Created '#{ARGV[1]}' containing #{@read_file.length / 6} characters"
+      @writer.close 
     end
 
 
 end
 
 nr = NightReader.new
-binding.pry 
 nr.write_it(nr.read_file)
