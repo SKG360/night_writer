@@ -137,7 +137,7 @@ end
 #     'O...OO'=> 'u', 'O.O.OO'=> 'v', '.OOO.O'=> 'w', 'OO..OO'=> 'x',
 #     'OO.OOO'=> 'y', 'O..OOO'=> 'z'
 # }
-#
+
 # alpha_to_braille = {
 #     'a' => 'O.....', 'b' => 'O.O...', 'c' => 'OO....', 'd' => 'OO.O..',
 #     'e' => 'O..O..', 'f' => 'OOO...', 'g' => 'OOOO..', 'h' => 'O.OO..',
