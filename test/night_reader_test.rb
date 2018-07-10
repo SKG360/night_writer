@@ -1,7 +1,7 @@
 require "pry"
 require "minitest/autorun"
 require "minitest/pride"
-require "./lib/night_reader"
+require "./lib/night_reader_class"
 
 class NightReaderTest < Minitest::Test
 
@@ -39,15 +39,16 @@ class NightReaderTest < Minitest::Test
     assert_equal ["a"], nr.write_worker("0.\n..\n..")
   end
 
-  def test_message_text
+  def test_message_text_prints
     nr = NightReader.new
-    nr.write_it("0...\n..0.\n0...")
-    writer = File.open(ARGV[1], "r")
+    nr.write_it("0.0.\n..0.\n....")
+
+    written = File.open(ARGV[1], "r")
     tester = File.open(ARGV[2], "r")
-    writer = writer.read
-    tester = tester.read
-    assert_equal tester, writer
+
+    actual = written.read
+    expected = tester.read
+    assert_equal expected, actual
   end
-  #how to measure write to file output
 
 end
