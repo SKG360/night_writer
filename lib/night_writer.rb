@@ -11,6 +11,20 @@ class NightWriter
 
   end
 
+  def break_up(original_string)
+    if original_string.length > 40
+      # takes first 40 characters
+      new_string = original_string[0..39]
+      # writes first 40 characters - see string_pring method below
+      @writer.write(string_print(new_string))
+      # if > 40 characters, then the remainder is assigned to "next_string"
+      next_string = original_string[40..original_string.length]
+      break_up(next_string)
+    else
+      @writer.write(string_print(original_string))
+    end
+  end
+
   def write_file
         @writer.write
   end
@@ -57,7 +71,7 @@ class NightWriter
 
   def string_print(translate_input)
     string_input = "#{translate_top(translate_input)}\n#{translate_mid(translate_input)}\n#{translate_bottom(translate_input)}\n"
-    p string_input
+    # p string_input
     # string_input
   end
 
