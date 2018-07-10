@@ -20,6 +20,13 @@ class NightWriterTest < Minitest::Test
     assert_instance_of File, nw.writer
   end
 
+  #how to test if the recursive method is functioning when arguments are variable
+
+  # def test_break_up
+  #   nw = NightWriter.new
+  #
+  # end
+
   def test_for_all_three
     nw = NightWriter.new
     assert_equal "0.", nw.hash_top("a")
