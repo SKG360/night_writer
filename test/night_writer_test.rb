@@ -24,8 +24,9 @@ class NightWriterTest < Minitest::Test
 
   def test_break_up
     nw = NightWriter.new
+    nw.write_file("hello denver it is nice to meet you we have a lot to share")
     writer = File.open(ARGV[1], "r")
-    tester = File.open(ARGV[2], "w")
+    tester = File.open(ARGV[2], "r")
     writer = writer.read
     tester = tester.read
     assert_equal writer, tester

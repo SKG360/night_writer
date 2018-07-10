@@ -69,5 +69,4 @@ class NightReader
 end
 
 nr = NightReader.new
-binding.pry
 nr.write_it(nr.read_file)
