@@ -14,19 +14,37 @@ class NightReader
     def braille_array(string)
       string.split("\n")
     end
-
+#----------ch ch ch check it out!!!!---------------------------
     def array_top(string)
-      "#{braille_array(string)[0]}#{braille_array(string)[3]}#{braille_array(string)[6]}#{braille_array(string)[9]}"
+      index = 0
+      array_to_join = []
+      while index < braille_array(string).length
+        array_to_join << braille_array(string)[index]
+        index += 3
+      end
+      array_to_join.join
     end
 
     def array_mid(string)
-      "#{braille_array(string)[1]}#{braille_array(string)[4]}#{braille_array(string)[7]}#{braille_array(string)[10]}"
+      index = 1
+      array_to_join = []
+      while index < braille_array(string).length
+        array_to_join << braille_array(string)[index]
+        index += 3
+      end
+      array_to_join.join
     end
 
     def array_bottom(string)
-      "#{braille_array(string)[2]}#{braille_array(string)[5]}#{braille_array(string)[8]}#{braille_array(string)[11]}"
+      index = 2
+      array_to_join = []
+      while index < braille_array(string).length
+        array_to_join << braille_array(string)[index]
+        index += 3
+      end
+      array_to_join.join
     end
-
+#--------------------------------------------------------
     def top_chunks(string)
       array_top(string).scan(/.{2}/)
     end
