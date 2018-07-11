@@ -8,8 +8,6 @@ class NightWriter
     @writer = File.open(ARGV[1], "w")
     @read_file = @reader.read
     @reader.close
-
-
   end
 
   def break_up(original_string)
@@ -74,8 +72,5 @@ class NightWriter
 
   def string_print(translate_input)
     string_input = "#{translate_top(translate_input)}\n#{translate_mid(translate_input)}\n#{translate_bottom(translate_input)}\n"
-    # p string_input
-    # string_input
   end
-
 end
